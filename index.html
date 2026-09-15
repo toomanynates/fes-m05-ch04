@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/a1b45cec90.js" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>  
+  <title>Movies List</title>
+</head>
+
+<body>
+  <header>
+
+    <nav>
+    <div class="logo__container">
+      <i class="fa-solid fa-film logo__icon"></i>
+      <div class="logo__text">film finder</div>
+    </div>
+    <ul class="nav__link--list">
+        <li class="nav__link">
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
+        <li class="nav__link">
+          <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
+        <li class="nav__link">
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a></li>
+        <li class="nav__link click">
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <main>
+  <div class="container">
+    <div class="row">
+      <div class="movie-list">
+          <!-- Sample HTML for a movie card, you can use this as a template for your JS to fill in
+          <div class="movie-card">
+            <div class="movie-card__container">
+              <h3>Movie Name</h3>
+                <img class="movie-card__image" src="https://m.media-amazon.com/images/M/MV5BMTc0NTUwMTU5OV5BMl5BanBnXkFtZTcwNjAwNzQzMw@@._V1_SX300.jpg" alt="Movie Poster">
+                <p><b>Email:</b> email@email.com</p>
+                <p><b>Phone:</b> 0000000000</p>
+                <p><b>Website: </b> <a href="https://website.website" target="_blank">website.website</a></p>
+            </div>
+          </div>
+          <hr>
+          -->
+        <div class="movie-cards">
+
+          <!-- the JS will fill this in -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  <footer>
+    <p>© 2024 Movies List. All rights reserved.</p>
+  </footer>
+</body>
+<script src="index.js"></script>
+</html>
