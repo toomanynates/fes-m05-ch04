@@ -7,185 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/a1b45cec90.js" crossorigin="anonymous"></script>
-  <script src="./index.js"></script>
-  <script>
-
-    /* TODO :
-    1) merge this code with my git project
-    2) Merge this script block with index.js
-    3) Delete this script block
-    4) account for Poster: 'N/A' instead of URL
-      - make some kind of "no poster available" poster
-      - Do I want to remove the Title from movies that do have a poster?
-      - account for posters of different sizes.
-      - poster image needs to move left by like 1 pixel
-    */
-
-
-    
-    // await the Enter key and then call the onSearchSubmit function
-    document.addEventListener('DOMContentLoaded', function () {
-      const searchInput = document.querySelector('.header__search--input');
-      searchInput.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-          onSearchSubmit(event);
-        }
-      });
-    });
-
-    async function fetchMovies(searchTerm) {
-        const response = await fetch("https://www.omdbapi.com/?apikey=68910135&s=" + searchTerm);
-        const data = await response.json();
-
-        console.log(data);
-
-        /* Response can be "True" or "False". If "False", console log the error message and throw an error with the message "Movie not found!".
-        if "True", console log the first movie in the Search array and call the renderCards function with the Search array as an argument.
-        */
-        try {
-            if (data.Response === "False") {
-                throw new Error("Movie not found!");
-            }
-            console.log(data.Search[0]);
-            renderCards(data.Search);
-        } catch (error) {
-            console.error(error.message);
-        }
-    }
-
-    // apply the search term
-    function onSearchSubmit(event) {
-      event.preventDefault();
-      const searchInput = document.querySelector('.header__search--input');
-      const searchTerm = searchInput.value.trim();
-
-      console.log('Search submitted with term:', searchTerm);
-
-      if (searchTerm) {
-        // Call your function to fetch and display movies based on the search term
-        fetchMovies(searchTerm);
-      }
-    }
-  </script>  
+  <script src="./index.js" defer></script>
   <title>Movies List</title>
-  <style>
-    /* Add your CSS styles here */
-
-    /* nade by copilot */
-    .header__search {
-      position: relative; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin: 24px auto;
-      max-width: 400px;
-    }
-
-    .header__search--input {
-      flex: 1;
-      padding: 12px 16px;
-      border: 1px solid #333;
-      border-radius: 20px;
-      font-size: 16px;
-    }
-
-    .header__search--btn {
-      padding: 6px;
-      border: none;
-      border-radius: 20px;
-      background-color: #fff;
-      color: #222;
-      cursor: pointer;
-      position: absolute;
-      font-size: 22px;
-      right: 3px;
-      transition: all 0.2s;
-    }
-
-    .header__search--btn:hover {
-      background-color: #eee;
-      padding: 6px;
-      font-size: 24px;
-      right: 2px;
-    }
-    /**/
-
-    /*
-    .header__search {
-      width: 100%;
-      max-width: 448px;
-      height: 68px;
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .header__search--input {
-      width: 100%;
-      border-radius: 500px;
-      border: 2px solid var(--color-border);
-      padding: 20px 192px 20px 32px;
-      font-size: 16px;
-      font-weight: 500;
-      position: absolute; 
-      transition: border-color 300ms;
-    }
-
-    .header__search--input:hover {
-      border-color: var(--color-border-strong);
-    }
-
-    .header__search--input:focus, .header__search--input:active {
-      outline: none;
-      border-color: var(--color-pri);
-    }
-
-    .header__search--btn {
-      z-index: 1; 
-      margin: 8px;
-      height: calc(100% - 16px);
-      width: 160px;
-      font-weight: 700;
-      font-size: 16px;
-    }*/
-
-  </style>
 </head>
 
 <body>
   <header>
+    <div class="background__container">
+      <img class="background_container-img" src="./assets/banner01.jpg">
+    </div>
 
     <nav>
-    <div class="logo__container">
-      <i class="fa-solid fa-film logo__icon"></i>
-      <div class="logo__text">film finder</div>
-    </div>
-    <ul class="nav__link--list">
+      <div class="logo__container">
+        <i class="fa-solid fa-film logo__icon"></i>
+        <div class="logo__text">film finder</div>
+      </div>
+      <ul class="nav__link--list">
         <li class="nav__link">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
-        <li class="nav__link">
+        <!-- <li class="nav__link">
           <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
         <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a></li>
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a></li> -->
         <li class="nav__link click">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a></li>
       </ul>
     </nav>
 
-    <div class="header__search">
-      <input type="text" class="header__search--input" placeholder="Type your movie search ..." />
+    <div class="row">
+      <input type="text" class="header__search--input" value="chronicles" placeholder="Type your movie search ..." />
       <button class="btn header__search--btn" onclick="onSearchSubmit(event)"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
-
-
 
   </header>
 
   <main>
   <div class="container">
-    <div class="row">
       <div class="movie-list">
           <!-- Sample HTML for a movie card, you can use this as a template for your JS to fill in
           <div class="movie-card">
@@ -204,8 +61,13 @@
           <!-- the JS will fill this in -->
 
         </div>
+
+        <div class="row">
+          <button class="more__btn" onclick="loadMoreClicked()">Load more movies ...</button>
+        </div>
+
       </div>
-    </div>
+
   </div>
   </main>
   <footer>
