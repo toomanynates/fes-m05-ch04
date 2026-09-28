@@ -9,7 +9,7 @@
 /*
 REQUIREMENTS:
 [x] The top has a search bar with a search buton. When you press Enter or the search button, it will search for movies with the title you entered and display them in cards below.
-[ ] Show the first 6 movies that match the search term. If there are more than 6, show a "Load More" button that will load the next 6 movies.
+[x] Show the first 6 movies that match the search term. If there are more than 6, show a "Load More" button that will load the next 6 movies.
 [ ] Add a loading state while awaiting the API fetch
 */
 
