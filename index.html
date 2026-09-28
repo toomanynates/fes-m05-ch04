@@ -19,18 +19,18 @@
 
     <nav>
       <div class="logo__container">
-        <i class="fa-solid fa-film logo__icon"></i>
-        <div class="logo__text">film finder</div>
+        <i class="fa-solid fa-film logo__icon color__dark"></i>
+        <div class="logo__text color__dark">film finder</div>
       </div>
       <ul class="nav__link--list">
         <li class="nav__link">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
+          <a href="#about" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
         <!-- <li class="nav__link">
           <a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
         <li class="nav__link">
           <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()">Contact</a></li> -->
         <li class="nav__link click">
-          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a></li>
+          <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="onClickDarkTheme()"><i class="fas fa-adjust"></i></a></li>
       </ul>
     </nav>
 
@@ -70,8 +70,15 @@
 
   </div>
   </main>
-  <footer>
-    <p>© 2024 Movies List. All rights reserved.</p>
+  <footer id="about">
+    <div class="footer__row">
+      <div class="logo__container cursor__pointer" onclick="scrollToTop()">
+        <i class="fa-solid fa-film logo__icon color__light"></i>
+        <div class="logo__text color__light">film finder</div>
+      </div>
+
+      <p class="footer__para">© 2024 Movies List. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -39,6 +39,15 @@ function openPage(id) {
     window.open(`https://www.imdb.com/title/${id}/`, "_blank");
 }
 
+function scrollToTop() {
+    window.scrollTo({top: 0});
+}
+
+function onClickDarkTheme() {
+  let body = document.querySelector('body');  
+  console.log("onClickDarkTheme() " + body.style.classList);
+  body.classList.toggle('dark-theme');
+}
 
 function renderCards(movies) {
     console.log(movies);
