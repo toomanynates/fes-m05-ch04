@@ -45,12 +45,12 @@
     <div class="container">
       <div class="movie-list">
 
-        <select class="filter__control" id="filter" onchange="filterMovies(event)">
+        <select class="filter__control" id="filter" onchange="onChangeFilter(event)">
           <option value="" selected>Sort</option>
           <option value="TITLE_LOW_TO_HIGH">Title, A to Z</option>
           <option value="TITLE_HIGH_TO_LOW">Title, Z to A</option>
           <option value="DATE_LOW_TO_HIGH">Date, past to present</option>
-          <option value="DATE_LOW_TO_HIGH">Date, present to past</option>
+          <option value="DATE_HIGH_TO_LOW">Date, present to past</option>
           <!-- option value="RATING">Rating</option -->
         </select>
         
